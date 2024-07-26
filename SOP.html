@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Agency Selection SOP</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.11.0/mermaid.min.js"></script>
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2ecc71;
+            --background-color: #f4f4f4;
+            --text-color: #333;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        nav {
+            background-color: var(--secondary-color);
+            padding: 0.5rem;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+        }
+
+        .flowchart {
+            margin: 2rem 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1rem;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 0.5rem;
+            text-align: left;
+        }
+
+        th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .interactive-element {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .interactive-element:hover {
+            background-color: #27ae60;
+        }
+
+        #timeline {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+
+        .timeline-item {
+            text-align: center;
+            flex: 1;
+        }
+
+        .timeline-item .dot {
+            width: 20px;
+            height: 20px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            margin: 0 auto;
+        }
+
+        .timeline-item .line {
+            height: 2px;
+            background-color: var(--primary-color);
+            width: 100%;
+            margin-top: 9px;
+        }
+
+        .timeline-item:last-child .line {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Creative Agency Selection SOP</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#" onclick="showVersion('technical')">Technical Version</a></li>
+            <li><a href="#" onclick="showVersion('managerial')">Managerial Version</a></li>
+        </ul>
+    </nav>
+    <main id="content">
+        <!-- Content will be dynamically loaded here -->
+    </main>
+
+    <script>
+        function showVersion(version) {
+            const content = document.getElementById('content');
+            if (version === 'technical') {
+                content.innerHTML = `
+                    <h2>Technical Version: SOP for Selecting a New Creative Agency</h2>
+                    <h3>Scope</h3>
+                    <p>This SOP outlines the process for selecting a new creative agency for various marketing objectives, including creative campaigns, copywriting, visuals, adaptations, and video development.</p>
+                    
+                    <h3>Responsibilities</h3>
+                    <ul>
+                        <li>VP Marketing: Overall responsibility for the agency selection process</li>
+                        <li>Digital Marketing Head: Provides input on digital marketing requirements</li>
+                        <li>Brand Strategy Head: Provides input on brand strategy and creative requirements</li>
+                        <li>Zonal Marketing Heads: Provide input on regional marketing requirements</li>
+                        <li>Regional Marketing Managers: Provide input on regional marketing requirements</li>
+                    </ul>
+
+                    <h3>Process</h3>
+                    <div class="interactive-element" onclick="toggleDetails('define-requirements')">
+                        1. Define Agency Requirements
+                    </div>
+                    <div id="define-requirements" style="display: none;">
+                        <ul>
+                            <li>Identify specific marketing objectives (e.g., increased brand awareness, clickthroughs, etc.)</li>
+                            <li>Determine required services (creative campaigns, copywriting, visuals, adaptations, video development)</li>
+                            <li>Assess industry expertise required (real estate, financial products, lifestyle products)</li>
+                        </ul>
+                    </div>
+
+                    <div class="interactive-element" onclick="toggleDetails('determine-budget')">
+                        2. Determine Budget
+                    </div>
+                    <div id="determine-budget" style="display: none;">
+                        <ul>
+                            <li>Establish budget scenarios for different budget ranges</li>
+                            <li>Consider factors such as agency size, structure, and technology requirements</li>
+                        </ul>
+                    </div>
+
+                    <div class="interactive-element" onclick="toggleDetails('research-shortlist')">
+                        3. Research and Shortlist Agencies
+                    </div>
+                    <div id="research-shortlist" style="display: none;">
+                        <ul>
+                            <li>Research potential agencies based on requirements and budget</li>
+                            <li>Create a shortlist of agencies that meet the minimum requirements</li>
+                        </ul>
+                    </div>
+
+                    <div class="interactive-element" onclick="toggleDetails('rfp-evaluation')">
+                        4. RFP and Proposal Evaluation
+                    </div>
+                    <div id="rfp-evaluation" style="display: none;">
+                        <ul>
+                            <li>Develop a Request for Proposal (RFP) document outlining requirements and evaluation criteria</li>
+                            <li>Evaluate proposals based on:
+                                <ul>
+                                    <li>Creative capabilities (30%)</li>
+                                    <li>Industry expertise (20%)</li>
+                                    <li>Technology and software capabilities (20%)</li>
+                                    <li>Agency size and structure (15%)</li>
+                                    <li>Budget and cost (15%)</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="interactive-element" onclick="toggleDetails('presentations-interviews')">
+                        5. Agency Presentations and Interviews
+                    </div>
+                    <div id="presentations-interviews" style="display: none;">
+                        <ul>
+                            <li>Invite shortlisted agencies for presentations and interviews</li>
+                            <li>Evaluate agency teams, creative work, and client relationships</li>
+                        </ul>
+                    </div>
+
+                    <div class="interactive-element" onclick="toggleDetails('selection-approval')">
+                        6. Selection and Approval
+                    </div>
+                    <div id="selection-approval" style="display: none;">
+                        <ul>
+                            <li>Select the top agency based on evaluation results</li>
+                            <li>Obtain approval from the VP Marketing and CMO</li>
+                        </ul>
+                    </div>
+
+                    <div class="interactive-element" onclick="toggleDetails('contract-negotiation')">
+                        7. Contract Negotiation
+                    </div>
+                    <div id="contract-negotiation" style="display: none;">
+                        <ul>
+                            <li>Negotiate contractual terms, including:
+                                <ul>
+                                    <li>Confidentiality</li>
+                                    <li>Termination clauses</li>
+                                    <li>Liability</li>
+                                    <li>Service quality</li>
+                                    <li>Timeline for service</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="interactive-element" onclick="toggleDetails('onboarding-kickoff')">
+                        8. Onboarding and Kick-Off
+                    </div>
+                    <div id="onboarding-kickoff" style="display: none;">
+                        <ul>
+                            <li>Onboard the selected agency</li>
+                            <li>Conduct a kick-off meeting to discuss objectives, timelines, and expectations</li>
+                        </ul>
+                    </div>
+
+                    <h3>Flowchart</h3>
+                    <div class="flowchart">
+                        <div class="mermaid">
+                        graph TD
+                            A[Define Agency Requirements] --> B[Determine Budget]
+                            B --> C[Research and Shortlist Agencies]
+                            C --> D[RFP and Proposal Evaluation]
+                            D --> E[Agency Presentations and Interviews]
+                            E --> F[Selection and Approval]
+                            F --> G[Contract Negotiation]
+                            G --> H[Onboarding and Kick-Off]
+                        </div>
+                    </div>
+
+                    <h3>Data Collection Mechanisms</h3>
+                    <table>
+                        <tr>
+                            <th>Step</th>
+                            <th>Data Required</th>
+                            <th>Collection Method</th>
+                        </tr>
+                        <tr>
+                            <td>Define Agency Requirements</td>
+                            <td>Marketing objectives, required services, industry expertise</td>
+                            <td>Internal meetings, stakeholder interviews</td>
+                        </tr>
+                        <tr>
+                            <td>Determine Budget</td>
+                            <td>Budget ranges, agency size preferences</td>
+                            <td>Financial analysis, market research</td>
+                        </tr>
+                        <tr>
+                            <td>Research and Shortlist Agencies</td>
+                            <td>Agency capabilities, client portfolios</td>
+                            <td>Online research, industry databases</td>
+                        </tr>
+                        <tr>
+                            <td>RFP and Proposal Evaluation</td>
+                            <td>Agency proposals, pricing information</td>
+                            <td>RFP responses, evaluation matrix</td>
+                        </tr>
+                        <tr>
+                            <td>Agency Presentations and Interviews</td>
+                            <td>Creative samples, team dynamics</td>
+                            <td>In-person presentations, Q&A sessions</td>
+                        </tr>
+                    </table>
+                `;
+            } else if (version === 'managerial') {
+                content.innerHTML = `
+                    <h2>Managerial Version: SOP for Selecting a New Creative Agency</h2>
+                    <h3>Objective</h3>
+                    <p>To establish a standardized process for selecting a new creative agency that meets the marketing team's objectives and requirements.</p>
+                    
+                    <h3>Key Responsibilities</h3>
+                    <ul>
+                        <li>VP Marketing: Oversees the agency selection process</li>
+                        <li>Digital Marketing Head: Provides input on digital marketing requirements</li>
+                        <li>Brand Strategy Head: Provides input on brand strategy and creative requirements</li>
+                    </ul>
+
+                    <h3>Key Steps</h3>
+                    <div id="timeline">
+                        <div class="timeline-item">
+                            <div class="dot"></div>
+                            <div class="line"></div>
+                            <p>Define Requirements</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="dot"></div>
+                            <div class="line"></div>
+                            <p>Research Agencies</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="dot"></div>
+                            <div class="line"></div>
+                            <p>Evaluate Proposals</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="dot"></div>
+                            <div class="line"></div>
+                            <p>Select Agency</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="dot"></div>
+                            <div class="line"></div>
+                            <p>Negotiate Contract</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="dot"></div>
+                            <p>Onboard Agency</p>
+                        </div>
+                    </div>
+
+                    <h3>Decision-Making Process</h3>
+                    <ul>
+                        <li>VP Marketing: Approves the selected agency and contractual terms</li>
+                        <li>CMO: Provides final approval for the selected agency</li>
+                    </ul>
+
+                    <h3>Timeline</h3>
+                    <table>
+                        <tr>
+                            <th>Task</th>
+                            <th>Duration</th>
+                        </tr>
+                        <tr>
+                            <td>Define agency requirements and budget</td>
+                            <td>2 days</td>
+                        </tr>
+                        <tr>
+                            <td>Research and shortlist agencies</td>
+                            <td>4 days</td>
+                        </tr>
+                        <tr>
+                            <td>Evaluate proposals and conduct agency presentations</td>
+                            <td>6 days</td>
+                        </tr>
+                        <tr>
+                            <td>Select and approve the top agency</td>
+                            <td>2 days</td>
+                        </tr>
+                        <tr>
+                            <td>Negotiate contractual terms</td>
+                            <td>3 days</td>
+                        </tr>
+                        <tr>
+                            <td>Onboard the selected agency</td>
+                            <td>2 days</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Total timeline</strong></td>
+                            <td><strong>19 days</strong></td>
+                        </tr>
+                    </table>
+
+                    
+                    <h3>Budget Scenarios</h3>
+                    <div class="interactive-element" onclick="toggleDetails('budget-scenarios')">
+                        Click to view budget scenarios
+                    </div>
+                    <div id="budget-scenarios" style="display: none;">
+                        <ul>
+                            <li>Low budget (< $50,000): Consider smaller agencies or freelancers</li>
+                            <li>Medium budget ($50,000 - $200,000): Consider mid-sized agencies</li>
+                            <li>High budget (>$200,000): Consider large agencies or multiple agencies for different services</li>
+                        </ul>
+                    </div>
+
+                    <h3>Key Performance Indicators (KPIs)</h3>
+                    <div class="interactive-element" onclick="toggleDetails('kpis')">
+                        Click to view KPIs
+                    </div>
+                    <div id="kpis" style="display: none;">
+                        <ul>
+                            <li>Time to complete agency selection process</li>
+                            <li>Quality of agency proposals received</li>
+                            <li>Alignment of selected agency with marketing objectives</li>
+                            <li>Cost efficiency of selected agency</li>
+                            <li>Stakeholder satisfaction with the selection process</li>
+                        </ul>
+                    </div>
+
+                    <h3>Risk Management</h3>
+                    <table>
+                        <tr>
+                            <th>Risk</th>
+                            <th>Mitigation Strategy</th>
+                        </tr>
+                        <tr>
+                            <td>Insufficient quality proposals</td>
+                            <td>Expand agency research and consider extending the RFP deadline</td>
+                        </tr>
+                        <tr>
+                            <td>Budget overruns</td>
+                            <td>Establish clear budget constraints and negotiate fixed-price contracts</td>
+                        </tr>
+                        <tr>
+                            <td>Misalignment with marketing objectives</td>
+                            <td>Clearly define objectives in RFP and evaluate proposals against these criteria</td>
+                        </tr>
+                        <tr>
+                            <td>Delays in decision-making</td>
+                            <td>Set clear timelines and establish a streamlined approval process</td>
+                        </tr>
+                    </table>
+
+                    <h3>Continuous Improvement</h3>
+                    <p>To ensure this SOP adheres to Lean and Six Sigma principles:</p>
+                    <ul>
+                        <li>Conduct post-selection reviews to identify areas for process improvement</li>
+                        <li>Regularly update the agency evaluation criteria based on changing marketing needs</li>
+                        <li>Monitor and analyze KPIs to identify bottlenecks and inefficiencies</li>
+                        <li>Encourage feedback from all stakeholders involved in the selection process</li>
+                        <li>Periodically benchmark the selection process against industry best practices</li>
+                    </ul>
+
+                    <h3>Approval Hierarchy</h3>
+                    <div class="mermaid">
+                    graph TD
+                        A[Regional Marketing Executives] --> B[Regional Marketing Managers]
+                        B --> C[Zonal Marketing Heads]
+                        C --> D[VP Marketing]
+                        D --> E[CMO]
+                        E --> F[CEO]
+                        G[Digital Marketing Managers] --> H[Digital Marketing Head]
+                        H --> D
+                        I[Brand Strategy Managers] --> J[Brand Strategy Head]
+                        J --> D
+                    </div>
+
+                    <h3>Data-Driven Decision Making</h3>
+                    <p>To ensure decisions are based on accurate and relevant data:</p>
+                    <ul>
+                        <li>Implement a centralized data collection system for agency information and evaluations</li>
+                        <li>Use standardized evaluation forms and scoring matrices</li>
+                        <li>Conduct regular market research to stay updated on agency capabilities and industry trends</li>
+                        <li>Utilize data visualization tools to present complex information to decision-makers</li>
+                        <li>Incorporate historical performance data when evaluating agencies with prior engagements</li>
+                    </ul>
+                `;
+            }
+            mermaid.init();
+        }
+
+        function toggleDetails(id) {
+            const element = document.getElementById(id);
+            element.style.display = element.style.display === 'none' ? 'block' : 'none';
+        }
+
+        // Initialize Mermaid
+        mermaid.initialize({ startOnLoad: true });
+
+        // Show technical version by default
+        showVersion('technical');
+    </script>
+</body>
